@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wrap It | Welcome</title>
+  <link rel="stylesheet" href="{% static 'wrappedapp/style.css' %}">
+</head>
+<body>
+  <header class="hero">
+    <div class="banner-text">
+      <h1>Wrap It</h1>
+      <p>Your music. Your stats. Instantly.</p>
+      <a href="{% url 'login' %}" class="connect-btn">Connect with Spotify</a>
+    </div>
+  </header>
+
+  <!-- Thin banner inserted between button and green text -->
+  <img src="{% static 'wrappedapp/images/banner.png' %}" alt="Wrap It banner" class="thin-banner">
+
+  <main class="content">
+    <section>
+      <h2>Discover Your Listening Habits</h2>
+      <p>See your top tracks, favorite artists, and more — anytime you want.</p>
+    </section>
+  </main>
+</body>
+</html>

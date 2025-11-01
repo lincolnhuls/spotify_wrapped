@@ -1,0 +1,289 @@
+.navbar {
+  background-color: #1DB954; /* Spotify green */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left h1 {
+  margin: 0;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.nav-right a:hover {
+  opacity: 0.8;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-greeting {
+  color: #1DB954;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.forms-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* General layout */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  animation: pageFadeIn 0.8s ease-in-out;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hero / header section */
+.hero {
+  background-color: #000;
+  padding: 60px 20px 40px;
+}
+
+/* Header text */
+.banner-text h1 {
+  font-size: 3em;
+  font-weight: 800;
+  color: #1DB954;
+  text-shadow:
+    0 0 5px rgba(29, 185, 84, 0.6),
+    0 0 10px rgba(29, 185, 84, 0.3);
+  margin-bottom: 0.3em;
+  animation: fadeSlide 1.5s ease-out forwards;
+}
+
+
+.banner-text p {
+  font-size: 1.2em;
+  color: #b3b3b3;
+  margin-bottom: 25px;
+}
+
+/* Fade + slide animation */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Connect button */
+.connect-btn {
+  background-color: #1DB954;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.connect-btn:hover {
+  background-color: #1ed760;
+}
+
+/* Thin banner between button and text */
+.thin-banner {
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  height: 225px; /* thinner height */
+  object-fit: cover;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+  animation: slowZoom 15s ease-in-out infinite alternate;
+}
+
+/* Optional subtle zoom animation */
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+/* Content section */
+.content {
+  padding: 40px 20px;
+  background-color: #181818;
+}
+
+.content h2 {
+  color: #1DB954;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #b3b3b3;
+  font-size: 1em;
+  max-width: 700px;
+  margin: 15px auto;
+}
+
+/* Dashboard layout */
+.dashboard-header {
+  text-align: center;
+  padding: 30px 20px 10px;
+  background-color: #000;
+}
+
+.dashboard-header h1 {
+  color: #1DB954;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+/* Time range form */
+.time-form {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.time-form label {
+  color: #b3b3b3;
+  margin-right: 10px;
+  font-size: 1em;
+}
+
+.time-form select {
+  background-color: #181818;
+  color: #fff;
+  border: 1px solid #1DB954;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+}
+
+.time-form select:hover {
+  background-color: #1DB954;
+  color: #000;
+}
+
+/* Track cards */
+.tracks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  background-color: #121212;
+}
+
+.track-card {
+  background-color: #181818;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.track-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+}
+
+.album-art {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.track-info h3 {
+  font-size: 1.1em;
+  margin: 5px 0;
+  color: #fff;
+}
+
+.track-info p {
+  color: #b3b3b3;
+  font-size: 0.9em;
+}
+
+.no-tracks {
+  text-align: center;
+  color: #b3b3b3;
+  padding: 50px;
+  font-size: 1.2em;
+}
+
+.artist-card {
+  display: flex;
+  align-items: center;
+  background-color: #121212;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.artist-card:hover {
+  transform: scale(1.02);
+}
+
+.artist-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.artist-info h3 {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.genre-card {
+  background-color: #181818;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.genre-card:hover {
+  transform: scale(1.03);
+}
+
+.genre-info h3 {
+  color: #1db954;
+  font-size: 1.2em;
+}
+
+.genre-bar {
+  height: 8px;
+  background-color: #1db954;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+
+
+

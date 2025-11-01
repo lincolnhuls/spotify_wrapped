@@ -1,0 +1,12 @@
+{% extends 'wrappedapp/base.html' %}
+
+{% block content %}
+  <section class="callback-content">
+    <h2>Welcome to Wrap It!</h2>
+    {% if user_name %}
+        <p class="user-greeting">Logged in as <strong>{{ user_name }}</strong></p>
+    {% endif %}
+    <p>You’re now connected to your Spotify account.</p>
+    <p>Use the navigation bar above to explore your listening!</p>
+  </section>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'wrappedapp/base.html' %}
+
+{% block content %}
+  <header class="dashboard-header">
+    <div class="header-top">
+      <h1>Your Top Genres</h1>
+      {% if user_name %}
+        <p class="user-greeting">Logged in as <strong>{{ user_name }}</strong></p>
+      {% endif %}
+    </div>
+
+    <div class="forms-container">
+      <form action="{% url 'genres' %}" method="get" class="time-form">
+        <label for="time_range">Time Range:</label>
+        <select name="time_range" id="time_range" onchange="this.form.submit()">
+          <option value="short_term" {% if range == 'short_term' %}selected{% endif %}>Last 4 Weeks</option>
+          <option value="medium_term" {% if range == 'medium_term' %}selected{% endif %}>Last 6 Months</option>
+          <option value="long_term" {% if range == 'long_term' %}selected{% endif %}>All Time</option>
+        </select>
+      </form>
+    </div>
+  </header>
+
+  <main class="tracks-container">
+    {% if genres %}
+      {% for genre, count in genres.items %}
+        <div class="genre-card">
+          <div class="genre-info">
+            <h3>{{ genre|title }}</h3>
+            <div class="genre-bar" data-width="{{ count|default:0 }}"></div>
+            <p>{{ count }} artist{{ count|pluralize }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-tracks">No genres found.</p>
+    {% endif %}
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.genre-bar').forEach(function(bar) {
+        var width = bar.getAttribute('data-width');
+        bar.style.width = width + 'px';
+      });
+    });
+  </script>
+{% endblock %}
